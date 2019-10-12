@@ -2,5 +2,21 @@
 @import 'css/cancel.scss';
 
 
+table{
+  user-select: none;
+}
 
 
+
+.hide{
+  animation: hide 0.45s linear backwards;
+}
+
+
+
+@keyframes hide {
+  to{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}

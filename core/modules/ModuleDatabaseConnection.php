@@ -15,8 +15,8 @@ class ModuleDatabaseConnection
     private function __construct()
     {
         $config = Config::load("database");
-        $connecting = "mysql:dbname={$config->dbname};host={$config->host};charset={$config->charset};port={$config->port}";
-        $this->dbh = new PDO($connecting, 'root', '',
+        $connecting = "mysql:dbname={$config->dbname};host={$config->host};charset={$config->charset}";
+        $this->dbh = new PDO($connecting, $config->login, $config->pass,
             [
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION

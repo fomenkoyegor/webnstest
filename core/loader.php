@@ -5,6 +5,8 @@ include CLASS_PATH . "Router.php";
 include CLASS_PATH . "Model.php";
 include CLASS_PATH . "Entity.php";
 include CLASS_PATH . "AutoLoader.php";
+include CLASS_PATH . "View.php";
+session_start();
 
 spl_autoload_register("Autoloader::load");
 $router = Router::getInstance();
