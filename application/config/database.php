@@ -1,9 +1,9 @@
 <?php
 return [
-    "login"=>"root",
-    "pass"=>"",
-    "dbname"=>"webnstest",
+    "login"=>"By7CLE6weL",
+    "pass"=>"XZVxuNBgP4",
+    "dbname"=>"By7CLE6weL",
     "charset"=>"utf8",
-    "host"=>"127.0.0.1",
+    "host"=>"remotemysql.com",
     "port"=>"3306"
 ];
