@@ -16,6 +16,10 @@ class UserService extends Ajax {
     async delete(id) {
         return super.post(this.url + 'delete/' + id);
     }
+
+    async update(user) {
+        return super.post(this.url + 'update/' + user.id, user);
+    }
 }
 
 const usersService = new UserService();

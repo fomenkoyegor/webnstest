@@ -36,6 +36,11 @@ class ControllerUsers extends Controller
             $first_name = @$_POST["first_name"];
             $second_name = @$_POST["second_name"];
             $email = @$_POST["email"];
+
+            $first_name = htmlspecialchars($first_name);
+            $second_name = htmlspecialchars($second_name);
+            $email = htmlspecialchars($email);
+
             if (self::is_empty($first_name, $second_name, $email)) throw new Exception("enter all fields");
             $user = new User($first_name, $second_name, $email);
             $id = ModelUser::instance()->add($user);
@@ -80,6 +85,11 @@ class ControllerUsers extends Controller
             $first_name = @$_POST["first_name"] ? @$_POST["first_name"] : $user->first_name;
             $second_name = @$_POST["second_name"] ? @$_POST["second_name"] : $user->second_name;
             $email = @$_POST["email"] ? @$_POST["email"] : $user->email;
+
+
+            $first_name = htmlspecialchars($first_name);
+            $second_name = htmlspecialchars($second_name);
+            $email = htmlspecialchars($email);
 
            ModelUser::instance()->updateById($id,[
                 'first_name' => $first_name,
